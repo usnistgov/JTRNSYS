@@ -1,0 +1,30 @@
+syntax = "proto3";
+package JTRNSYSDataTypes;
+// [END declaration]
+
+// [START java_declaration]
+option java_package = "com.socket";
+option java_outer_classname = "JTRNSYSProto";
+
+// [START messages]
+message DataTypes
+{
+	string stringData = 1;
+	int32 intData = 2;
+	double doubleData = 3;
+
+	message ArrayDataTypes
+	{	//defining arrays
+		double doubleArray = 1;
+		int32 intArray = 2;
+		string stringArray = 3;
+	}
+	repeated ArrayDataTypes arrays = 4;
+}
+
+// Our data is just one of these.
+message JTRNSYSData
+{
+ repeated DataTypes data = 1;
+}
+// [END messages]
